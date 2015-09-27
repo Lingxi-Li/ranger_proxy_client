@@ -1,0 +1,29 @@
+# The very first item must be local_port.
+local_port=56789
+
+# Server 1 configuration.
+# Host name or IPv4/v6 address.
+remote_host=host_name_or_ip_1
+# Service name or port number.
+remote_service=service_name_or_port_1
+# Currently, any string is OK as a key string which is interpreted and used as
+# a raw byte sequence. Key strings used by server and client must match.
+key_string=Key String 1
+# Either "on" or "off". Not implemented, and thus has no effect.
+# See README for an explanation.
+compress=off
+
+# Server 2 configuration.
+# Multiple servers are used in a round-robin fashion.
+remote_host=host_name_or_ip_2
+remote_service=service_name_or_port_2
+key_string=Key String 2
+# compress is off by default if not specified.
+
+# Server 3 configuration.
+remote_host=host_name_or_ip_3
+remote_service=service_name_or_port_3
+key_string=Key String 3
+compress=on
+
+# Server 4, server 5...
