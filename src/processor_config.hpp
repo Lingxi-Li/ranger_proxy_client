@@ -17,4 +17,4 @@ public:
   void ParseConfigItem(const std::string& key, const std::string& value);
 };
 
-std::ostream& operator <<(std::ostream& os, const ProcessorConfig& cfg);
+void Print(const ProcessorConfig& cfg);

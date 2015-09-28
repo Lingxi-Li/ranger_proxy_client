@@ -31,6 +31,6 @@ int main() {
 
   ComputingService::Get().run();  // Join in powering up computing service.
   GUARD_EXCEPTION_END
-  std::cout << "\nPress <Enter> to terminate." << std::flush;
+  std::cout << "\nPress <Enter> to terminate." << std::endl;
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

@@ -24,7 +24,8 @@ ServerConfig::ServerConfig(std::istream& in) {
   in >> std::ws;
 }
 
-std::ostream& operator <<(std::ostream& os, const ServerConfig& cfg) {
-  return os << REMOTE_HOST ": " << cfg.host << "\n" REMOTE_SERVICE ": " 
-            << cfg.service << '\n' << cfg.processor_cfg;
+void Print(const ServerConfig& cfg) {
+  std::cout << REMOTE_HOST ": " << cfg.host << "\n" REMOTE_SERVICE ": "
+            << cfg.service << '\n';
+  Print(cfg.processor_cfg);
 }

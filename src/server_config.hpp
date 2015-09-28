@@ -18,4 +18,4 @@ public:
   ServerConfig(std::istream& in);
 };
 
-std::ostream& operator <<(std::ostream& os, const ServerConfig& cfg);
+void Print(const ServerConfig& cfg);

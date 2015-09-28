@@ -16,7 +16,7 @@ void ProcessorConfig::ParseConfigItem(const std::string& key,
                       throw std::invalid_argument(ERR_MSG_UNKNOWN_ITEM(key));
 }
 
-std::ostream& operator <<(std::ostream& os, const ProcessorConfig& cfg) {
-  return os << KEY_STRING ": " << cfg.key_str << "\n" COMPRESS ": "
-            << cfg.compress;
+void Print(const ProcessorConfig& cfg) {
+  std::cout << KEY_STRING ": " << cfg.key_str << "\n" COMPRESS ": "
+            << cfg.compress << std::endl;
 }

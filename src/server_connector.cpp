@@ -23,8 +23,8 @@ void ServerConnector::ResolveServers() {
   unsigned i = 0;
   // Resolve each server.
   for (auto& server_info : Config::Get().servers) {
-    std::cout << "Server " << ++i << " config\n"
-              << server_info << std::endl;
+    std::cout << "Server " << ++i << " config\n";
+    Print(server_info);
     auto it = resolver.resolve(
       tcp::resolver::query(server_info.host, server_info.service), err);
     if (it == decltype(it)()) {
@@ -64,7 +64,7 @@ void ServerConnector::OnConnected(socket_ptr p_client_socket,
   else {
     LogError("Failed to connect to Server " + 
       std::to_string(server_id_[idx]), err);
-    std::cout << "  Retry (possibly to a different server)." << std::endl;
+    std::cout << "Retry (possibly to a different server)." << std::endl;
     AsyncConnect(std::move(p_client_socket));
   }
 }

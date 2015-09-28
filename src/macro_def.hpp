@@ -33,9 +33,9 @@
 #define LINE LINE_(__LINE__)
 #  define LINE_(line) LINE__(line)
 #  define LINE__(line) #line
-#define FILE_LINE __FILE__ ": " LINE
+#define FILE_LINE __FILE__ ", " LINE
 
-#define ERROR_MESSAGE(...) __VA_ARGS__ ".\n" FILE_LINE
+#define ERROR_MESSAGE(...) __VA_ARGS__ ". " FILE_LINE
 
 #define ERR_MSG_MISSING_EQUAL_SIGN ERROR_MESSAGE("Missing \"=\" in " CONFIG)
 #define ERR_MSG_UNKNOWN_ITEM(...)  ERROR_MESSAGE("Unknown item \"" + (__VA_ARGS__) + "\" in " CONFIG)
@@ -48,9 +48,9 @@
 #define GUARD_EXCEPTION_END \
   } \
   catch(const std::exception& e) { \
-    std::cout << "Exception caught at " FILE_LINE ".\n" \
+    std::cout << "Exception caught at " FILE_LINE "\n" \
               << e.what() << std::endl; \
   } \
   catch(...) { \
-    std::cout << "Unknown exception caught at " FILE_LINE "." << std::endl; \
+    std::cout << "Unknown exception caught at " FILE_LINE << std::endl; \
   }
