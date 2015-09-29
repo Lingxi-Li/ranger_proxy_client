@@ -33,4 +33,5 @@ int main() {
   GUARD_EXCEPTION_END
   std::cout << "\nPress <Enter> to terminate." << std::endl;
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::_Exit(0);  // The program is not designed to terminate in the usual way.
 }
