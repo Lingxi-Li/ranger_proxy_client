@@ -81,6 +81,7 @@
     <ClInclude Include="..\..\src\server_connector.hpp" />
     <ClInclude Include="..\..\src\singleton.hpp" />
     <ClInclude Include="..\..\src\util.hpp" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\bin\config.txt" />
@@ -89,6 +90,9 @@
     <None Include="..\..\LICENSE" />
     <None Include="..\..\README.md" />
     <None Include="ranger_proxy_client.licenseheader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ranger_proxy_client.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

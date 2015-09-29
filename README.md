@@ -30,7 +30,7 @@ It should be noted that although ranger_proxy supports optional data compression
 	    LICENSE
 	    README.md........................The file you are reading now
 	    src/.............................All source files of this project
-	    vc15/............................A Visual C++ 2015 (VC15) configuration
+	    vc15/............................A Visual C++ 2015 (VC15) setup
 	        bin/.........................Output and working directory
 	            config.txt...............Config file for the client
 	        boost/
@@ -44,7 +44,7 @@ It should be noted that although ranger_proxy supports optional data compression
 <a name="build"></a>
 ## Build Instructions
 
-Simply speaking, compile all source files and link with Boost and OpenSSL. For convenience, a VC15 configuration is included in the distribution with the following options:
+Simply speaking, compile all source files and link with Boost and OpenSSL. For convenience, a VC15 setup is included in the distribution with the following options:
 
 * Release build for x86
 * Dynamically link to C/C++ runtime library
