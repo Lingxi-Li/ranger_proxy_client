@@ -19,9 +19,9 @@ It should be noted that although ranger_proxy supports optional data compression
 <a name="require"></a>
 ## Requirements
 
-* Build tools supporting C++14
-* [Boost C++ Libraries](http://www.boost.org)
-* [OpenSSL Toolkit](https://www.openssl.org)
+* Build tools supporting C++14 (VC15 tested)
+* [Boost C++ Libraries](http://www.boost.org) (v1.58.0 tested)
+* [OpenSSL Toolkit](https://www.openssl.org) (v1.0.2d tested)
 
 <a name="struct"></a>
 ## Distribution Structure
