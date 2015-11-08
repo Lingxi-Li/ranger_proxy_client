@@ -19,9 +19,10 @@ It should be noted that although ranger_proxy supports optional data compression
 <a name="require"></a>
 ## Requirements
 
-* Build tools supporting C++14 *(VC15 tested)*
-* [Boost C++ Libraries](http://www.boost.org) *(v1.58.0 tested)*
-* [OpenSSL Toolkit](https://www.openssl.org) *(v1.0.2d tested)*
+* Build tools supporting C++14 (VC15 tested)
+* [Boost C++ Libraries](http://www.boost.org) (v1.58.0 tested)
+* [OpenSSL Toolkit](https://www.openssl.org) (v1.0.2d tested)
+* On Windows platforms, Vista/2008 or above is required (see the *Remarks* section [here](http://www.boost.org/doc/libs/1_59_0/doc/html/boost_asio/reference/basic_stream_socket/cancel/overload1.html))
 
 <a name="struct"></a>
 ## Distribution Structure
@@ -29,32 +30,17 @@ It should be noted that although ranger_proxy supports optional data compression
 	/....................................Root directory
 	    LICENSE
 	    README.md........................The file you are reading now
-	    CMakeLists.txt...................CMake file
-	    src/.............................All project source files and a CMake file
-	    vc15/............................A Visual C++ 2015 (VC15) setup
-	        bin/.........................Output and working directory
-	            config.txt...............Config file for the client
-	        boost/
-	            boost/...................Put Boost headers here
-				import_lib/..............Put Boost import libraries here
-			openssl/.....................The same for OpenSSL
-			ranger_proxy_client/.........VC15 files
-
-**Remainder:** Config file for the client is found at `/vc15/bin/config.txt`.
+	    CMakeLists.txt...................CMake listfile
+	    config.txt.......................Config file for the client 
+	    src/.............................All source files of the project
 
 <a name="build"></a>
 ## Build Instructions
 
-Simply speaking, compile all source files and link with Boost and OpenSSL. [CMake](https://cmake.org) scripts are prepared.
+Simply speaking, compile all source files and link with Boost and OpenSSL. A [CMake](https://cmake.org) listfile is provided. It has been tested on both Windows and Linux platforms.
 
-A VC15 setup is also included in the distribution with the following options:
-
-* Release build for x86
-* Dynamically link to C/C++ runtime library
-* Dynamically link to Boost by defining the macro `BOOST_ALL_DYN_LINK`
-* Support Windows Vista/2008 and later by defining `_WIN32_WINNT` to `0x0600`. See the _Remarks_ section [here](http://www.boost.org/doc/libs/1_59_0/doc/html/boost_asio/reference/basic_stream_socket/cancel/overload1.html).
 
 <a name="license"></a>
 ## License
 
-This software is distributed under the [BSD 3-Clause License](http://opensource.org/licenses/BSD-3-Clause). See accompanying file `LICENSE` at the root directory of this distribution.
+This software is distributed under the [BSD 3-Clause License](http://opensource.org/licenses/BSD-3-Clause). See accompanying `LICENSE` file at the root directory of this distribution.
