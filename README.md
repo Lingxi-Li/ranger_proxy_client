@@ -23,6 +23,7 @@ It should be noted that although ranger_proxy supports optional data compression
 * [Boost C++ Libraries](http://www.boost.org) (v1.58.0 tested)
 * [OpenSSL Toolkit](https://www.openssl.org) (v1.0.2d tested)
 * On Windows platforms, Vista/2008 or above is required (see the *Remarks* section [here](http://www.boost.org/doc/libs/1_59_0/doc/html/boost_asio/reference/basic_stream_socket/cancel/overload1.html))
+* [CMake](https://cmake.org) 3.0 is required to process the listfile
 
 <a name="struct"></a>
 ## Distribution Structure
@@ -37,7 +38,7 @@ It should be noted that although ranger_proxy supports optional data compression
 <a name="build"></a>
 ## Build Instructions
 
-Simply speaking, compile all source files and link with Boost and OpenSSL. A [CMake](https://cmake.org) listfile is provided. It has been tested on both Windows and Linux platforms.
+Simply speaking, compile all source files and link with Boost and OpenSSL. A CMake listfile is provided. It has been tested on both Windows and Linux platforms.
 
 
 <a name="license"></a>
