@@ -46,13 +46,14 @@ set(sources
   src/session.cpp
   src/util.cpp)
 add_executable(ranger_proxy_client ${headers} ${sources})
-if(MSVC)
-  target_compile_definitions(ranger_proxy_client PRIVATE _WIN32_WINNT=0x0600 _CRT_SECURE_NO_WARNINGS)
-  target_compile_options(ranger_proxy_client PRIVATE /wd4005)
-else()
-  target_compile_options(ranger_proxy_client PRIVATE -std=c++14)
-endif()
-target_link_libraries(ranger_proxy_client PRIVATE boost_shared_lib openssl_shared_lib)
+target_compile_definitions(ranger_proxy_client PRIVATE
+  $<$<CXX_COMPILER_ID:MSVC>:_WIN32_WINNT=0x0600 _CRT_SECURE_NO_WARNINGS>)
+target_compile_options(ranger_proxy_client PRIVATE 
+  $<$<CXX_COMPILER_ID:MSVC>:/wd4005>
+  $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-std=c++14>)
+target_link_libraries(ranger_proxy_client PRIVATE
+  boost_shared_lib openssl_shared_lib
+  $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-pthread>)
 
 install(TARGETS ranger_proxy_client
   RUNTIME DESTINATION bin)
