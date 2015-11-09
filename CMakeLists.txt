@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
 project(ranger_proxy_client)
 
-set(CMAKE_CONFIGURATION_TYPES Release CACHE STRING "[ Release | Debug | RelWithDebInfo | MinSizeRel ]" FORCE)
+if(MSVC)
+  set(CMAKE_CONFIGURATION_TYPES Release CACHE STRING "[ Release | Debug | RelWithDebInfo | MinSizeRel ]" FORCE)
+endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY bin)
 
 set(boost_include_dir "" CACHE PATH "Path to Boost include directory")
