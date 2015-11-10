@@ -22,5 +22,7 @@ private:
   void OnAccepted(socket_ptr client_socket, const error_code& err);
 
   tcp::acceptor acceptor_ipv4_;
-  tcp::acceptor acceptor_ipv6_;
+  // Bind two acceptors on the same port won't work on Linux systems, despite
+  // the use of reuse_addr.
+  //tcp::acceptor acceptor_ipv6_;
 };

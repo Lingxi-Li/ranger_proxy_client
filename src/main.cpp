@@ -27,7 +27,7 @@ int main() {
   std::cout << "Up and running...\n" RULE_70 PARA_END;
   
   ClientAcceptor::Get().ChainedAsyncAccept(tcp::v4());
-  ClientAcceptor::Get().ChainedAsyncAccept(tcp::v6());
+  //ClientAcceptor::Get().ChainedAsyncAccept(tcp::v6());
 
   ComputingService::Get().run();  // Join in powering up computing service.
   GUARD_EXCEPTION_END

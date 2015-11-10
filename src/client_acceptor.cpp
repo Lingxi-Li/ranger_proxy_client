@@ -16,14 +16,17 @@
 ClientAcceptor::ClientAcceptor()
  : acceptor_ipv4_(NetworkIoService::Get(), tcp::endpoint(
                   tcp::v4(), (unsigned short)(Config::Get().local_port)))
- , acceptor_ipv6_(NetworkIoService::Get(), tcp::endpoint(
-                  tcp::v6(), (unsigned short)(Config::Get().local_port))) {
+ /*, acceptor_ipv6_(NetworkIoService::Get(), tcp::endpoint(
+                  tcp::v6(), (unsigned short)(Config::Get().local_port)))*/ {
   std::cout << LOCAL_PORT ": " << Config::Get().local_port << PARA_END;
 }
 
 void ClientAcceptor::ChainedAsyncAccept(tcp protocol) {
   auto p_client_socket = std::make_shared<tcp::socket>(NetworkIoService::Get());
-  auto& acceptor = protocol == tcp::v4() ? acceptor_ipv4_ : acceptor_ipv6_;
+  //auto& acceptor = protocol == tcp::v4() ? acceptor_ipv4_ : acceptor_ipv6_;
+  if (protocol == tcp::v6())
+    throw std::invalid_argument(ERR_MSG_IPV6_CLIENT_NOT_SUPPORTED);
+  auto& acceptor = acceptor_ipv4_;
   auto& client_socket = *p_client_socket;
   acceptor.async_accept(client_socket,
     std::bind(&ClientAcceptor::OnAccepted,

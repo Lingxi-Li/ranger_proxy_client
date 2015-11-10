@@ -43,6 +43,7 @@
 #define ERR_MSG_EMPTY_CONFIG       ERROR_MESSAGE("Empty " CONFIG)
 #define ERR_MSG_LOCAL_PORT_MUST_COME_FIRST ERROR_MESSAGE(LOCAL_PORT " must come first")
 #define ERR_MSG_NO_RESOLVED_SERVER ERROR_MESSAGE("No resolved server")
+#define ERR_MSG_IPV6_CLIENT_NOT_SUPPORTED ERROR_MESSAGE("IPv6 session with clients not supported")
 
 #define GUARD_EXCEPTION_BEGIN try {
 #define GUARD_EXCEPTION_END \
